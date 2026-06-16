@@ -11,7 +11,8 @@ permalink: /kontakt/
     <p>Konzultácia môže prebehnúť telefonicky, osobne alebo formou videohovoru. Stačí stručne opísať, prečo nás kontaktujete.</p>
   </div>
   <div class="contact-box">
-    <p><strong>E-mail: </strong><a href="mailto:kancelaria@systemoveinovacie.sk?subject=Záujem o konzultáciu">kancelaria@systemoveinovacie.sk</a></p>
-    <p><strong>Telefón: </strong><a href="tel:+421911509282">0911 509 282</a></p>
+      <p><strong>E-mail: </strong><a href="mailto:kancelaria@systemoveinovacie.sk?subject=Záujem o konzultáciu">kancelaria@systemoveinovacie.sk</a></p>
+      <p><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </strong><a href="mailto:predseda@systemoveinovacie.sk?subject=Záujem o konzultáciu">predseda@systemoveinovacie.sk</a></p>
+    <p><strong>Telefón: </strong><a href="tel:+421951036656">+421 951 036 656</a></p>
   </div>
 </section>
