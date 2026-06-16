@@ -2,6 +2,17 @@ import path from "node:path";
 import * as sass from "sass";
 
 export default function (eleventyConfig) {
+	eleventyConfig.ignores.add("DESIGN.md");
+	eleventyConfig.setInputDirectory(".");
+	eleventyConfig.setIncludesDirectory("_includes");
+	eleventyConfig.setOutputDirectory("_site");
+	eleventyConfig.setTemplateFormats([
+		"md",
+		"njk",
+		"html",
+		"scss",
+	]);
+
 	eleventyConfig.addExtension("scss", {
 		outputFileExtension: "css",
 
