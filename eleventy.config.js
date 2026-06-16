@@ -3,6 +3,7 @@ import * as sass from "sass";
 
 export default function (eleventyConfig) {
 	eleventyConfig.ignores.add("DESIGN.md");
+	eleventyConfig.addPassthroughCopy("assets");
 	eleventyConfig.setInputDirectory(".");
 	eleventyConfig.setIncludesDirectory("_includes");
 	eleventyConfig.setOutputDirectory("_site");

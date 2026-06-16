@@ -198,11 +198,38 @@ main > .hero {
 }
 
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
   gap: clamp(2rem, 6vw, 5rem);
   min-height: calc(100vh - 72px);
   align-items: center;
+}
+
+.hero--landing {
+  max-width: none;
+  isolation: isolate;
+  padding-inline: max(1.5rem, calc((100vw - var(--max-width)) / 2 + 1.5rem));
+}
+
+.hero--landing::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(11, 19, 38, 0.92) 0%, rgba(11, 19, 38, 0.76) 42%, rgba(11, 19, 38, 0.18) 100%),
+    linear-gradient(180deg, rgba(11, 19, 38, 0.3), rgba(11, 19, 38, 0.78)),
+    url("/assets/image.jpg") center / cover no-repeat;
+}
+
+.hero--landing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(11, 19, 38, 0), var(--color-surface));
+  opacity: 0.55;
 }
 
 .hero__content {
@@ -345,8 +372,13 @@ main > .hero {
 }
 
 .content-grid > article,
+.content-stack,
 .text-block {
   max-width: 720px;
+}
+
+.content-grid--balanced {
+  align-items: center;
 }
 
 .note,
