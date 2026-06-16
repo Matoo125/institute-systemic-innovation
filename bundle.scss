@@ -182,6 +182,7 @@ h3 {
 
 main {
   overflow: hidden;
+  min-height: calc(100vh - 72px);
 }
 
 .hero,
@@ -189,6 +190,11 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 6rem 1.5rem;
+}
+
+main > .section,
+main > .hero {
+  min-height: calc(100vh - 72px);
 }
 
 .hero {
@@ -277,8 +283,27 @@ main {
   padding: 0.9rem 1rem;
 }
 
+.hero__panel a {
+  border-left: 3px solid var(--color-primary);
+  background: var(--color-surface-3);
+  color: var(--color-on-surface);
+  font-weight: 800;
+  padding: 0.9rem 1rem;
+  text-decoration: none;
+}
+
+.hero__panel a:hover,
+.hero__panel a:focus-visible {
+  background: var(--color-primary);
+  color: white;
+}
+
 .section {
   border-top: 1px solid var(--color-line);
+}
+
+.page-hero h1 {
+  max-width: 860px;
 }
 
 .section--tinted {
@@ -369,7 +394,7 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
   gap: 2rem;
-  align-items: anchor-center;
+  align-items: center;
 }
 
 .contact-box {
