@@ -7,12 +7,15 @@ permalink: /digitalizacia/
 <section class="section page-hero section--tinted">
   <div class="section__header">
     <p class="eyebrow">Digitalizácia</p>
-    <h1>Digitalizácia nemá zrýchliť nefunkčný proces.</h1>
-    <p>Ak je proces zlý na papieri, po digitalizácii bude zlý rýchlejšie. Digitalizácia má zmysel až vtedy, keď má jasný cieľ.</p>
+    <h1>Digitalizácia nemá zrýchliť nefunkčný proces.</h1> <br/>
+    <p>Ak je proces zlý na papieri, po digitalizácii bude zlý rýchlejšie. Digitalizácia má zmysel až vtedy, keď má jasný cieľ.
+    Najprv potrebujeme pochopiť, čo nefunguje, kde sa stráca čas, kde vznikajú chyby, kto za čo zodpovedá a aký výstup má mať celý proces
+    Digitalizácia má zmysel až vtedy, keď má jasný cieľ.</p>
   </div>
   <div class="cards">
     <article class="card">
       <h3>Pred digitalizáciou</h3>
+      <p>Predtým, ako sa niečo prenesie do digitálnej podoby, musí byť jasné: </p>
       <ul>
         <li>čo presne dnes nefunguje,</li>
         <li>kde vzniká zdržanie alebo chyba,</li>
@@ -24,6 +27,8 @@ permalink: /digitalizacia/
     </article>
     <article class="card">
       <h3>Čo pripravujeme</h3>
+      <p> Prepojenie procesov, dokumentov, dát, zodpovednosti a výstupov do jedného použiteľného rámca.
+     Pripravujeme najmä:</p>
       <ul>
         <li>návrh digitálneho procesu,</li>
         <li>štruktúru elektronickej evidencie,</li>
@@ -31,7 +36,8 @@ permalink: /digitalizacia/
         <li>tok úloh a zodpovedností,</li>
         <li>dátový zber a vyhodnotenie,</li>
         <li>návrh digitálneho nástroja podľa reálnej potreby.</li>
-      </ul>
+      </ul> <br />
+      <p>Každé riešenie musí mať zmysel pre ľudí, ktorí s ním budú pracovať.</p>
     </article>
     <article class="card">
       <h3>Ako postupujeme</h3>

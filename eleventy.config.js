@@ -4,6 +4,7 @@ import * as sass from "sass";
 export default function (eleventyConfig) {
 	eleventyConfig.ignores.add("DESIGN.md");
 	eleventyConfig.addPassthroughCopy("assets");
+	eleventyConfig.addGlobalData("buildDateTime", new Date().toISOString());
 	eleventyConfig.setInputDirectory(".");
 	eleventyConfig.setIncludesDirectory("_includes");
 	eleventyConfig.setOutputDirectory("_site");
