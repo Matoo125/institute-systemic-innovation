@@ -22,7 +22,12 @@ title: Inštitút systémových inovácií
           <span class="site-brand__mark">ISI</span>
           <span class="site-brand__text">Inštitút systémových inovácií</span>
         </a>
-        <div class="site-nav__links">
+        <button class="site-nav__toggle" type="button" aria-label="Otvoriť navigáciu" aria-controls="site-nav-links" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="site-nav__links" id="site-nav-links">
           <a href="/inovacie/">Inovácie</a>
           <a href="/digitalizacia/">Digitalizácia</a>
           <a href="/prieskumy/">Prieskumy a analýzy</a>
@@ -35,5 +40,34 @@ title: Inštitút systémových inovácií
     <main id="content">
       {{ content | safe }}
     </main>
+    <script>
+      const nav = document.querySelector(".site-nav");
+      const navToggle = document.querySelector(".site-nav__toggle");
+      const navLinks = document.querySelector(".site-nav__links");
+
+      if (nav && navToggle && navLinks) {
+        const setNavOpen = (isOpen) => {
+          nav.classList.toggle("is-open", isOpen);
+          navToggle.setAttribute("aria-expanded", String(isOpen));
+          navToggle.setAttribute("aria-label", isOpen ? "Zatvoriť navigáciu" : "Otvoriť navigáciu");
+        };
+
+        navToggle.addEventListener("click", () => {
+          setNavOpen(!nav.classList.contains("is-open"));
+        });
+
+        navLinks.addEventListener("click", (event) => {
+          if (event.target.closest("a")) {
+            setNavOpen(false);
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            setNavOpen(false);
+          }
+        });
+      }
+    </script>
   </body>
 </html>

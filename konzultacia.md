@@ -4,7 +4,7 @@ title: Konzultácia | Inštitút systémových inovácií
 permalink: /konzultacia/
 ---
 
-<section class="section page-hero section--tinted">
+<section class="section page-hero section--tinted section--konzultacia-bg">
   <div class="section__header">
     <p class="eyebrow">Konzultácia</p>
     <h1>Najprv pochopiť tému, potom navrhnúť postup.</h1>

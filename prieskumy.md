@@ -4,7 +4,7 @@ title: Prieskumy a analýzy | Inštitút systémových inovácií
 permalink: /prieskumy/
 ---
 
-<section class="section page-hero">
+<section class="section page-hero section--tinted section--prieskumy-bg">
   <div class="section__header">
     <p class="eyebrow">Prieskumy a analýzy</p>
     <h1>Prinášame presnosť, nie iba objem dát.</h1>
@@ -28,8 +28,9 @@ permalink: /prieskumy/
       <p>Spolupráca s nami znamená metodiku, spracovanie, výstup a návrh ďalšieho kroku.</p>
       <p>Šetríme vám čas aj peniaze. Namiesto nafúknutých tímov a zdĺhavých procesov prinášame jasný postup a výstup, s ktorým sa dá pracovať.</p>
       <p>Prinášame presnosť.</p>
-
     </article>
-   
+    <aside class="media-aside" aria-label="Ilustrácia prieskumov a analýz">
+      <img src="/assets/image5.png" alt="">
+    </aside>
   </div>
 </section>

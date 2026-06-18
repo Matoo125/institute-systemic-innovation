@@ -4,7 +4,7 @@ title: Digitalizácia | Inštitút systémových inovácií
 permalink: /digitalizacia/
 ---
 
-<section class="section page-hero section--tinted">
+<section class="section page-hero section--tinted section--digitalization">
   <div class="section__header">
     <p class="eyebrow">Digitalizácia</p>
     <h1>Digitalizácia nemá zrýchliť nefunkčný proces.</h1> <br/>

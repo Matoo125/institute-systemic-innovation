@@ -4,7 +4,7 @@ title: Kontakt | Inštitút systémových inovácií
 permalink: /kontakt/
 ---
 
-<section class="section page-hero section--contact">
+<section class="section page-hero section--contact section--kontakt-bg">
   <div class="section__header">
     <p class="eyebrow">Kontakt</p>
     <h1>Požiadať o nezáväznú konzultáciu</h1>

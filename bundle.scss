@@ -133,6 +133,50 @@ h3 {
   padding: 0.9rem 1.5rem;
 }
 
+.site-nav__toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+  color: var(--color-on-surface);
+  cursor: pointer;
+}
+
+.site-nav__toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.site-nav__toggle span + span {
+  margin-top: 5px;
+}
+
+.site-nav__toggle:hover,
+.site-nav__toggle:focus-visible {
+  border-color: rgba(218, 226, 253, 0.46);
+  background: var(--color-surface-3);
+}
+
+.site-nav.is-open .site-nav__toggle span:first-child {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-nav.is-open .site-nav__toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-nav.is-open .site-nav__toggle span:last-child {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .site-brand {
   display: inline-flex;
   align-items: center;
@@ -342,12 +386,80 @@ main > .hero {
 .section--tasks::before {
   content: "";
   position: absolute;
+  top: 0;
   left: 50%;
   z-index: -1;
   width: 100vw;
   height: 100%;
   transform: translateX(-50%);
   background: rgba(17, 26, 47, 0.55);
+}
+
+.section--digitalization {
+  isolation: isolate;
+}
+
+.section--digitalization::before {
+  background:
+    linear-gradient(90deg, rgba(11, 19, 38, 0.94) 0%, rgba(11, 19, 38, 0.82) 48%, rgba(11, 19, 38, 0.58) 100%),
+    linear-gradient(180deg, rgba(11, 19, 38, 0.36), var(--color-surface)),
+    url("/assets/image3.jpg") center / cover no-repeat;
+}
+
+.section--digitalization .card {
+  background: rgba(17, 26, 47, 0.88);
+  backdrop-filter: blur(14px);
+}
+
+.section--prieskumy-bg,
+.section--o-nas-bg,
+.section--konzultacia-bg,
+.section--kontakt-bg,
+.section--inovacie-bg {
+  isolation: isolate;
+}
+
+.section--inovacie-bg::before {
+  background:
+    linear-gradient(90deg, rgba(11, 19, 38, 0.94) 0%, rgba(11, 19, 38, 0.84) 50%, rgba(11, 19, 38, 0.58) 100%),
+    linear-gradient(180deg, rgba(11, 19, 38, 0.28), var(--color-surface)),
+    url("/assets/image2.jpg") center / cover no-repeat;
+}
+
+.section--prieskumy-bg::before {
+  background:
+    linear-gradient(90deg, rgba(11, 19, 38, 0.94) 0%, rgba(11, 19, 38, 0.86) 52%, rgba(11, 19, 38, 0.64) 100%),
+    linear-gradient(180deg, rgba(11, 19, 38, 0.22), var(--color-surface)),
+    url("/assets/image4.jpg") center / cover no-repeat;
+}
+
+.section--o-nas-bg::before {
+  background:
+    linear-gradient(90deg, rgba(11, 19, 38, 0.95) 0%, rgba(11, 19, 38, 0.86) 54%, rgba(11, 19, 38, 0.62) 100%),
+    linear-gradient(180deg, rgba(11, 19, 38, 0.2), var(--color-surface)),
+    url("/assets/image4.jpg") center / cover no-repeat;
+}
+
+.section--konzultacia-bg::before {
+  background:
+    linear-gradient(90deg, rgba(11, 19, 38, 0.94) 0%, rgba(11, 19, 38, 0.84) 50%, rgba(11, 19, 38, 0.6) 100%),
+    linear-gradient(180deg, rgba(11, 19, 38, 0.24), var(--color-surface)),
+    url("/assets/image4.jpg") center / cover no-repeat;
+}
+
+.section--kontakt-bg::before {
+  background:
+    linear-gradient(90deg, rgba(11, 19, 38, 0.95) 0%, rgba(11, 19, 38, 0.86) 48%, rgba(11, 19, 38, 0.62) 100%),
+    linear-gradient(180deg, rgba(11, 19, 38, 0.2), var(--color-surface)),
+    url("/assets/image4.jpg") center / cover no-repeat;
+}
+
+.section--konzultacia-bg .card,
+.section--kontakt-bg .contact-box,
+.section--prieskumy-bg .note,
+.section--inovacie-bg .note {
+  background: rgba(17, 26, 47, 0.88);
+  backdrop-filter: blur(14px);
 }
 
 .section--tinted,
@@ -434,6 +546,20 @@ main > .hero {
   align-items: center;
 }
 
+.media-aside {
+  align-self: start;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: rgba(218, 226, 253, 0.94);
+}
+
+.media-aside img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .note,
 .card,
 .contact-box,
@@ -502,17 +628,38 @@ main > .hero {
 
 @media (max-width: 900px) {
   html {
-    scroll-padding-top: 130px;
+    scroll-padding-top: 80px;
   }
 
   .site-nav {
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 0.8rem 1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .site-nav__toggle {
+    display: grid;
   }
 
   .site-nav__links {
+    display: none;
+    grid-column: 1 / -1;
+    width: 100%;
+    align-items: stretch;
     justify-content: flex-start;
+    gap: 0.25rem;
+    padding: 0.75rem 0 0.25rem;
+  }
+
+  .site-nav.is-open .site-nav__links {
+    display: grid;
+  }
+
+  .site-nav__links a {
+    border-radius: var(--radius);
+    padding: 0.7rem 0.75rem;
   }
 
   .hero {
@@ -555,14 +702,6 @@ main > .hero {
 
   .site-brand__text {
     max-width: 210px;
-  }
-
-  .site-nav__links {
-    gap: 0.1rem;
-  }
-
-  .site-nav__links a {
-    padding: 0.45rem 0.58rem;
   }
 
   .hero,

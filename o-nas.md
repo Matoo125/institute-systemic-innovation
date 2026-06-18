@@ -4,7 +4,7 @@ title: O nás | Inštitút systémových inovácií
 permalink: /o-nas/
 ---
 
-<section class="section page-hero">
+<section class="section page-hero section--tinted section--o-nas-bg">
   <div class="section__header">
     <p class="eyebrow">O nás</p>
     <h1>Kto stojí za Inštitútom</h1>
@@ -22,7 +22,7 @@ permalink: /o-nas/
         <p>Orgány Inštitútu systémových inovácií tvorí päťčlenná správna rada vrátane predsedu a kontrolný orgán - revízor.</p>
         <p>Podrobné pravidlá fungovania Inštitútu upravujú aktuálne stanovy občianskeho združenia.</p>
         <a href="/dalsie-kroky/">Doplniť odkaz na stanovy</a>
-      </div>
+      </div> 
       <div class="text-block">
         <h3>História a kontinuita</h3>
         <p>Občianske združenie má viac ako trinásťročnú históriu. Pôvodne vzniklo ako priestor pre prepájanie ľudí a medzinárodnú spoluprácu. Dnes pokračuje ako Inštitút systémových inovácií s odborným zameraním na praktické systémové riešenia.</p>
