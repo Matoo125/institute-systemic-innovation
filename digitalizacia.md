@@ -49,6 +49,7 @@ permalink: /digitalizacia/
         <li>navrhneme praktické riešenie,</li>
         <li>pripravíme výstup a ďalší krok.</li>
       </ul>
+      <!--<img src="/assets/image8.svg" alt="Contact background" class="contact-bg" style="width: 100%;" />-->
     </article>
   </div>
 </section>
