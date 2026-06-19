@@ -197,8 +197,9 @@ h3 {
   border-radius: var(--radius);
   background: var(--color-primary);
   color: white;
-  font-size: 0.8rem;
+  font-size: 1.8rem;
   letter-spacing: 0.08em;
+
 }
 
 .site-nav__links {
@@ -626,7 +627,7 @@ main > .hero {
   padding-left: 0.25rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   html {
     scroll-padding-top: 80px;
   }
