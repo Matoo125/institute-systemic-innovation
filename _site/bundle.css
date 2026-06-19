@@ -463,7 +463,7 @@ main > .hero {
   flex-wrap: wrap;
 }
 
-.toggle-section__summary h1::after {
+.toggle-section__summary p.eyebrow span:first-child::after {
   content: "+";
   display: inline-grid;
   width: 2rem;
@@ -475,9 +475,10 @@ main > .hero {
   font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 700;
+  margin-left: 12px;
 }
 
-.toggle-section[open] .toggle-section__summary h1::after {
+.toggle-section[open] .toggle-section__summary p.eyebrow span:first-child::after {
   content: "-";
   color: var(--color-on-surface);
 }
