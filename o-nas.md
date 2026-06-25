@@ -18,12 +18,11 @@ permalink: /o-nas/
         <p>Jeho úlohou je prepájať skúsenosť z praxe s odborným rámcom, dátami a použiteľným výstupom.</p>
       </article>
       <img src="/assets/image6.svg" alt="Contact background" class="contact-bg" />
-      
       <div class="text-block">
         <h3>Riadenie a kontrola</h3>
         <p>Orgány Inštitútu systémových inovácií tvorí päťčlenná správna rada vrátane predsedu a kontrolný orgán - revízor.</p>
         <p>Podrobné pravidlá fungovania Inštitútu upravujú aktuálne stanovy občianskeho združenia.</p>
-        <a href="/dalsie-kroky/">Doplniť odkaz na stanovy</a>
+        <a href="/#">Doplniť odkaz na stanovy</a>
       </div> 
       <div class="text-block">
         <h3>História a kontinuita</h3>
