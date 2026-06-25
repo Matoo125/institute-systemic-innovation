@@ -11,7 +11,7 @@ permalink: /inovacie/
       <span class="withPlusIcon">Inovácie</span> 
         <span>
           <span class="alert-badge" role="status">Nová sekcia</span>
-          <span class="tooltip"><button type="button" class="tooltip__trigger" aria-label="Zobraziť nápovedu" aria-expanded="false"><i class="fi fi-rr-seal-question"></i></button><span class="tooltip__bubble" role="tooltip">Kliknutím na nadpis zobrazíte alebo skryjete text.</span></span>
+          <info-tooltip label="Informácia o sekcii" text="Kliknutím na nadpis zobrazíte alebo skryjete text."></info-tooltip>
         </span>
       </p>
       <h1>Voľby do samospráv 2026 </h1><br/>
@@ -19,28 +19,30 @@ permalink: /inovacie/
     </summary>
     <div class="toggle-section__content">
       <div class="content-grid">
-        <article>
-          <h3>Čo prinášame</h3>
-          <p>Inštitút systémových inovácií prináša systém, ktorý prepája osobný kontakt s obyvateľmi, digitalizáciu, dáta a konkrétny výstup pre kandidáta.</p>
-          <ul>
-            <li>osobný prístup k obyvateľom,</li>
-            <li>digitálny zber spätnej väzby,</li>
-            <li>dátové vyhodnotenie,</li>
-            <li>praktický výstup pre kandidáta.</li>
-          </ul>
-          <p>Výsledkom je podklad, z ktorého si kandidát môže vytvoriť volebný program postavený na reálnych potrebách občanov.</p>
-        </article>
+        <div class="content-stack">
+          <article>
+            <h3>Čo prinášame</h3>
+            <p>Inštitút systémových inovácií prináša systém, ktorý prepája osobný kontakt s obyvateľmi, digitalizáciu, dáta a konkrétny výstup pre kandidáta.</p>
+            <ul>
+              <li>osobný prístup k obyvateľom,</li>
+              <li>digitálny zber spätnej väzby,</li>
+              <li>dátové vyhodnotenie,</li>
+              <li>praktický výstup pre kandidáta.</li>
+            </ul>
+            <p>Výsledkom je podklad, z ktorého si kandidát môže vytvoriť volebný program postavený na reálnych potrebách občanov.</p>
+          </article>
+          <div class="text-block">
+            <h3>Zmluvný rámec spolupráce</h3>
+            <p>Bez jasného rámca nespolupracujeme. Každá spolupráca musí mať vopred určené, čo sa dodáva, kto za čo zodpovedá, aké výstupy vzniknú a ako budú použité.</p>
+            <p>Presná cena závisí od rozsahu územia, počtu obyvateľov, spôsobu zberu dát, výstupov a miery zapojenia kandidáta alebo tímu.</p>
+          </div>
+        </div>
         <aside class="note">
           <h3>Pre koho je systém určený</h3>
           <p>Pre kandidátov na funkciu starostu, primátora, župana a poslanca obecného, mestského alebo krajského zastupiteľstva.</p>
           <p>V jednej obci alebo mestskom obvode spolupracujeme iba s jedným kandidátom.</p>
+          <img style="max-width: 100%" src="/assets/rail.svg" />
         </aside>
       </div>
-      <div class="text-block">
-        <h3>Zmluvný rámec spolupráce</h3>
-        <p>Bez jasného rámca nespolupracujeme. Každá spolupráca musí mať vopred určené, čo sa dodáva, kto za čo zodpovedá, aké výstupy vzniknú a ako budú použité.</p>
-        <p>Presná cena závisí od rozsahu územia, počtu obyvateľov, spôsobu zberu dát, výstupov a miery zapojenia kandidáta alebo tímu.</p>
-      </div>
-    </div>
   </details>
 </section>

@@ -70,47 +70,7 @@ title: Inštitút systémových inovácií
           }
         });
       }
-
-      // Tooltips: hover to show, click the icon to pin, click elsewhere to dismiss.
-      const tooltips = Array.from(document.querySelectorAll(".tooltip"));
-
-      if (tooltips.length) {
-        const closeTooltips = (except) => {
-          tooltips.forEach((tip) => {
-            if (tip === except) return;
-            tip.classList.remove("is-pinned");
-            const trigger = tip.querySelector(".tooltip__trigger");
-            if (trigger) trigger.setAttribute("aria-expanded", "false");
-          });
-        };
-
-        tooltips.forEach((tip) => {
-          const trigger = tip.querySelector(".tooltip__trigger");
-          if (!trigger) return;
-
-          trigger.addEventListener("click", (event) => {
-            // Don't let the click toggle a surrounding <details>/<summary>.
-            event.preventDefault();
-            event.stopPropagation();
-            const willPin = !tip.classList.contains("is-pinned");
-            closeTooltips(tip);
-            tip.classList.toggle("is-pinned", willPin);
-            trigger.setAttribute("aria-expanded", String(willPin));
-          });
-        });
-
-        document.addEventListener("click", (event) => {
-          if (!event.target.closest(".tooltip")) {
-            closeTooltips();
-          }
-        });
-
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape") {
-            closeTooltips();
-          }
-        });
-      }
     </script>
+    <script src="/assets/info-tooltip.js?v={{ assetVersion }}" defer></script>
   </body>
 </html>
