@@ -1,4 +1,5 @@
-:root {
+:root,
+:root[data-theme="dark"] {
   --color-primary: #2665fd;
   --color-primary-hover: #4d7dff;
   --color-secondary: #475569;
@@ -9,9 +10,51 @@
   --color-muted: #97a7c7;
   --color-line: #26324b;
   --color-error: #ffb4ab;
+
+  /* Theme-specific chrome (overridden per theme) */
+  --body-tint: rgba(38, 101, 253, 0.14);
+  --header-bg: rgba(11, 19, 38, 0.88);
+  --header-border: rgba(38, 50, 75, 0.95);
+  --section-tint: rgba(17, 26, 47, 0.55);
+  --grid-line-1: rgba(218, 226, 253, 0.035);
+  --grid-line-2: rgba(218, 226, 253, 0.025);
+  --badge-bg: rgba(255, 180, 171, 0.12);
+  --badge-border: rgba(255, 180, 171, 0.55);
+  --panel-bg: rgba(17, 26, 47, 0.88);
+  /* RGB triple for the photo-overlay scrim, used as rgba(var(--scrim-rgb), a). */
+  --scrim-rgb: 11, 19, 38;
+
   --radius: 8px;
   --max-width: 1120px;
   --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --color-primary: #2665fd;
+  --color-primary-hover: #1b4fd6;
+  --color-secondary: #64748b;
+  --color-surface: #f5f7fc;
+  --color-surface-2: #ffffff;
+  --color-surface-3: #eef2fb;
+  --color-on-surface: #16233f;
+  --color-muted: #54648c;
+  --color-line: #d7dfef;
+  --color-error: #c0362c;
+
+  --body-tint: rgba(38, 101, 253, 0.08);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --header-border: rgba(215, 223, 239, 0.9);
+  --section-tint: rgba(22, 35, 63, 0.035);
+  --grid-line-1: rgba(38, 50, 75, 0.05);
+  --grid-line-2: rgba(38, 50, 75, 0.035);
+  --badge-bg: rgba(192, 54, 44, 0.1);
+  --badge-border: rgba(192, 54, 44, 0.4);
+  --panel-bg: var(--color-surface-2);
+  /* Light-blue overlay so photo sections read as light with dark text. */
+  --scrim-rgb: 210, 224, 250;
+
+  color-scheme: light;
 }
 
 * {
@@ -26,7 +69,7 @@ html {
 body {
   margin: 0;
   background:
-    linear-gradient(180deg, rgba(38, 101, 253, 0.14), rgba(11, 19, 38, 0) 460px),
+    linear-gradient(180deg, var(--body-tint), rgba(11, 19, 38, 0) 460px),
     var(--color-surface);
   color: var(--color-on-surface);
   font-family: var(--font-sans);
@@ -41,8 +84,8 @@ body::before {
   inset: 0;
   z-index: -1;
   background-image:
-    linear-gradient(rgba(218, 226, 253, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(218, 226, 253, 0.025) 1px, transparent 1px);
+    linear-gradient(var(--grid-line-1) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-2) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: linear-gradient(180deg, #000 0, transparent 72%);
 }
@@ -118,8 +161,8 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid rgba(38, 50, 75, 0.95);
-  background: rgba(11, 19, 38, 0.88);
+  border-bottom: 1px solid var(--header-border);
+  background: var(--header-bg);
   backdrop-filter: blur(18px);
 }
 
@@ -145,6 +188,35 @@ h3 {
   color: var(--color-on-surface);
   cursor: pointer;
 }
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+  color: var(--color-on-surface);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  border-color: var(--color-primary-hover);
+  background: var(--color-surface-3);
+  color: var(--color-primary-hover);
+}
+
+/* Show the icon for the active theme: moon in dark, sun in light. */
+.theme-toggle__light { display: none; }
+.theme-toggle__dark { display: block; }
+
+:root[data-theme="light"] .theme-toggle__light { display: block; }
+:root[data-theme="light"] .theme-toggle__dark { display: none; }
 
 .site-nav__toggle span {
   display: block;
@@ -263,8 +335,8 @@ position: absolute;
 inset: 0;
        z-index: -2;
 background:
-       linear-gradient(90deg, rgba(11, 19, 38, 0.92) 0%, rgba(11, 19, 38, 0.76) 42%, rgba(11, 19, 38, 0.18) 100%),
-	       linear-gradient(180deg, rgba(11, 19, 38, 0.3), rgba(11, 19, 38, 0.78)),
+       linear-gradient(90deg, rgba(var(--scrim-rgb), 0.92) 0%, rgba(var(--scrim-rgb), 0.76) 42%, rgba(var(--scrim-rgb), 0.18) 100%),
+	       linear-gradient(180deg, rgba(var(--scrim-rgb), 0.3), rgba(var(--scrim-rgb), 0.78)),
 	       url("/assets/image.jpg") center / cover no-repeat;
 }
 
@@ -343,7 +415,7 @@ display: grid;
 gap: 0.8rem;
 border: 1px solid var(--color-line);
 	border-radius: var(--radius);
-background: rgba(17, 26, 47, 0.82);
+background: var(--panel-bg);
 padding: 1rem;
 }
 
@@ -392,7 +464,7 @@ left: 50%;
 width: 100vw;
 height: 100%;
 transform: translateX(-50%);
-background: rgba(17, 26, 47, 0.55);
+background: var(--section-tint);
 	}
 
 .section--digitalization {
@@ -401,13 +473,13 @@ isolation: isolate;
 
 .section--digitalization::before {
 background:
-	linear-gradient(90deg, rgba(11, 19, 38, 0.94) 0%, rgba(11, 19, 38, 0.82) 48%, rgba(11, 19, 38, 0.58) 100%),
-	linear-gradient(180deg, rgba(11, 19, 38, 0.36), var(--color-surface)),
+	linear-gradient(90deg, rgba(var(--scrim-rgb), 0.94) 0%, rgba(var(--scrim-rgb), 0.82) 48%, rgba(var(--scrim-rgb), 0.58) 100%),
+	linear-gradient(180deg, rgba(var(--scrim-rgb), 0.36), var(--color-surface)),
 	url("/assets/image3.jpg") center / cover no-repeat;
 }
 
 .section--digitalization .card {
-background: rgba(17, 26, 47, 0.88);
+background: var(--panel-bg);
 	    backdrop-filter: blur(14px);
 }
 
@@ -421,36 +493,36 @@ isolation: isolate;
 
 .section--inovacie-bg::before {
 background:
-	linear-gradient(90deg, rgba(11, 19, 38, 0.94) 0%, rgba(11, 19, 38, 0.84) 50%, rgba(11, 19, 38, 0.58) 100%),
-	linear-gradient(180deg, rgba(11, 19, 38, 0.28), var(--color-surface)),
+	linear-gradient(90deg, rgba(var(--scrim-rgb), 0.94) 0%, rgba(var(--scrim-rgb), 0.84) 50%, rgba(var(--scrim-rgb), 0.58) 100%),
+	linear-gradient(180deg, rgba(var(--scrim-rgb), 0.28), var(--color-surface)),
 	url("/assets/image2.jpg") center / cover no-repeat;
 }
 
 .section--prieskumy-bg::before {
 background:
-	linear-gradient(90deg, rgba(11, 19, 38, 0.94) 0%, rgba(11, 19, 38, 0.86) 52%, rgba(11, 19, 38, 0.64) 100%),
-	linear-gradient(180deg, rgba(11, 19, 38, 0.22), var(--color-surface)),
+	linear-gradient(90deg, rgba(var(--scrim-rgb), 0.94) 0%, rgba(var(--scrim-rgb), 0.86) 52%, rgba(var(--scrim-rgb), 0.64) 100%),
+	linear-gradient(180deg, rgba(var(--scrim-rgb), 0.22), var(--color-surface)),
 	url("/assets/image4.jpg") center / cover no-repeat;
 }
 
 .section--o-nas-bg::before {
 background:
-	linear-gradient(90deg, rgba(11, 19, 38, 0.95) 0%, rgba(11, 19, 38, 0.86) 54%, rgba(11, 19, 38, 0.62) 100%),
-	linear-gradient(180deg, rgba(11, 19, 38, 0.2), var(--color-surface)),
+	linear-gradient(90deg, rgba(var(--scrim-rgb), 0.95) 0%, rgba(var(--scrim-rgb), 0.86) 54%, rgba(var(--scrim-rgb), 0.62) 100%),
+	linear-gradient(180deg, rgba(var(--scrim-rgb), 0.2), var(--color-surface)),
 	url("/assets/image9.jpg") center / cover no-repeat;
 }
 
 .section--konzultacia-bg::before {
 background:
-	linear-gradient(90deg, rgba(11, 19, 38, 0.94) 0%, rgba(11, 19, 38, 0.84) 50%, rgba(11, 19, 38, 0.6) 100%),
-		linear-gradient(180deg, rgba(11, 19, 38, 0.24), var(--color-surface)),
+	linear-gradient(90deg, rgba(var(--scrim-rgb), 0.94) 0%, rgba(var(--scrim-rgb), 0.84) 50%, rgba(var(--scrim-rgb), 0.6) 100%),
+		linear-gradient(180deg, rgba(var(--scrim-rgb), 0.24), var(--color-surface)),
 		url("/assets/image11.jpg") center / cover no-repeat;
 }
 
 .section--kontakt-bg::before {
 background:
-	linear-gradient(90deg, rgba(11, 19, 38, 0.95) 0%, rgba(11, 19, 38, 0.86) 48%, rgba(11, 19, 38, 0.62) 100%),
-		linear-gradient(180deg, rgba(11, 19, 38, 0.2), var(--color-surface)),
+	linear-gradient(90deg, rgba(var(--scrim-rgb), 0.95) 0%, rgba(var(--scrim-rgb), 0.86) 48%, rgba(var(--scrim-rgb), 0.62) 100%),
+		linear-gradient(180deg, rgba(var(--scrim-rgb), 0.2), var(--color-surface)),
 		url("/assets/image10.jpg") center / cover no-repeat;
 }
 
@@ -458,7 +530,7 @@ background:
 	.section--kontakt-bg .contact-box,
 	.section--prieskumy-bg .note,
 	.section--inovacie-bg .note {
-background: rgba(17, 26, 47, 0.88);
+background: var(--panel-bg);
 	    backdrop-filter: blur(14px);
 	}
 
@@ -587,9 +659,9 @@ position: relative;
 .alert-badge {
   display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(255, 180, 171, 0.55);
+  border: 1px solid var(--badge-border);
   border-radius: var(--radius);
-  background: rgba(255, 180, 171, 0.12);
+  background: var(--badge-bg);
   color: var(--color-error);
   font-size: 0.75rem;
   font-weight: 700;

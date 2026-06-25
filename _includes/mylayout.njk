@@ -5,6 +5,20 @@ title: Inštitút systémových inovácií
 <html lang="sk">
   <head>
     <meta charset="utf-8">
+    <script>
+      // Apply the theme before first paint to avoid a flash.
+      // Saved choice wins; otherwise follow the system, defaulting to dark.
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+          var theme = saved || (prefersLight ? "light" : "dark");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <meta name="description" content="Inštitút systémových inovácií prepája prax, dáta a použiteľné riešenia pre verejné, občianske, regionálne aj súkromné prostredie.">
@@ -69,6 +83,23 @@ title: Inštitút systémových inovácií
           if (event.key === "Escape") {
             setNavOpen(false);
           }
+        });
+      }
+
+      // Theme toggle — flips data-theme and remembers the choice.
+      const themeToggle = document.querySelector(".theme-toggle");
+      if (themeToggle) {
+        const syncToggle = () => {
+          const isLight = document.documentElement.getAttribute("data-theme") === "light";
+          themeToggle.setAttribute("aria-pressed", String(isLight));
+        };
+        syncToggle();
+
+        themeToggle.addEventListener("click", () => {
+          const next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", next);
+          try { localStorage.setItem("theme", next); } catch (e) { /* no-op */ }
+          syncToggle();
         });
       }
     </script>
