@@ -7,9 +7,9 @@ permalink: /inovacie/
 <section class="section page-hero section--tinted section--inovacie-bg">
   <details class="toggle-section"> 
     <summary class="section__header toggle-section__summary">
-      <p class="eyebrow">Inovácie</p>
-      <h1>Voľby do samospráv 2026 <span class="alert-badge" role="status">Nová sekcia</span></h1><br/>
-      <p>Hlas občana ako základ programu kandidáta. <span style="font-size: 14px; font-style: normal">Kliknutím na nadpis zobrazíte alebo skryjete text.</span></p>
+      <p class="eyebrow" style="display:flex; justify-content: space-between;"><span>Inovácie</span><span class="alert-badge" role="status">Nová sekcia</span></p>
+      <h1>Voľby do samospráv 2026 </h1><br/>
+      <p>Hlas občana ako základ programu kandidáta.<i class="fi fi-rr-seal-question"></i> <span style="font-size: 14px; font-style: normal">Kliknutím na nadpis zobrazíte alebo skryjete text.</span></p>
     </summary>
     <div class="toggle-section__content">
       <div class="content-grid">
