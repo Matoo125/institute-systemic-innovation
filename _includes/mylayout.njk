@@ -12,6 +12,7 @@ title: Inštitút systémových inovácií
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="/bundle.css?v={{ assetVersion }}">
 
   </head>
@@ -66,6 +67,47 @@ title: Inštitút systémových inovácií
         document.addEventListener("keydown", (event) => {
           if (event.key === "Escape") {
             setNavOpen(false);
+          }
+        });
+      }
+
+      // Tooltips: hover to show, click the icon to pin, click elsewhere to dismiss.
+      const tooltips = Array.from(document.querySelectorAll(".tooltip"));
+
+      if (tooltips.length) {
+        const closeTooltips = (except) => {
+          tooltips.forEach((tip) => {
+            if (tip === except) return;
+            tip.classList.remove("is-pinned");
+            const trigger = tip.querySelector(".tooltip__trigger");
+            if (trigger) trigger.setAttribute("aria-expanded", "false");
+          });
+        };
+
+        tooltips.forEach((tip) => {
+          const trigger = tip.querySelector(".tooltip__trigger");
+          if (!trigger) return;
+
+          trigger.addEventListener("click", (event) => {
+            // Don't let the click toggle a surrounding <details>/<summary>.
+            event.preventDefault();
+            event.stopPropagation();
+            const willPin = !tip.classList.contains("is-pinned");
+            closeTooltips(tip);
+            tip.classList.toggle("is-pinned", willPin);
+            trigger.setAttribute("aria-expanded", String(willPin));
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".tooltip")) {
+            closeTooltips();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeTooltips();
           }
         });
       }

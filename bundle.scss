@@ -489,7 +489,7 @@ position: relative;
   flex-wrap: wrap;
 }
 
-.toggle-section__summary p.eyebrow span:first-child::after {
+.toggle-section__summary p.eyebrow span.withPlusIcon::after {
   content: "+";
   display: inline-grid;
   width: 2rem;
@@ -504,9 +504,86 @@ position: relative;
   margin-left: 12px;
 }
 
-.toggle-section[open] .toggle-section__summary p.eyebrow span:first-child::after {
+.toggle-section[open] .toggle-section__summary p.eyebrow span.withPlusIcon::after {
   content: "-";
   color: var(--color-on-surface);
+}
+
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.tooltip__trigger {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-primary-hover);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.tooltip__trigger:hover,
+.tooltip__trigger:focus-visible,
+.tooltip__trigger[aria-expanded="true"] {
+  background: var(--color-surface-3);
+  color: var(--color-on-surface);
+}
+
+.tooltip__trigger i {
+  display: block;
+}
+
+.tooltip__bubble {
+  position: absolute;
+  bottom: calc(100% + 0.6rem);
+  left: 50%;
+  z-index: 30;
+  width: max-content;
+  max-width: min(320px, 80vw);
+  transform: translateX(-50%) translateY(0.35rem);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface-3);
+  color: var(--color-on-surface);
+  font-size: 0.85rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 0.6rem 0.75rem;
+  box-shadow: 0 12px 30px rgba(11, 19, 38, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+}
+
+.tooltip__bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--color-surface-3);
+}
+
+.tooltip:hover .tooltip__bubble,
+.tooltip__trigger:focus-visible + .tooltip__bubble,
+.tooltip.is-pinned .tooltip__bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .alert-badge {
