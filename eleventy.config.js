@@ -3,7 +3,11 @@ import * as sass from "sass";
 
 export default function (eleventyConfig) {
 	eleventyConfig.ignores.add("DESIGN.md");
-	eleventyConfig.addPassthroughCopy("assets");
+	eleventyConfig.addPassthroughCopy({
+		"assets": "assets",
+		"CNAME": "CNAME",
+		".nojekyll": ".nojekyll",
+	});
 	eleventyConfig.addGlobalData("buildDateTime", new Date().toISOString());
 	eleventyConfig.addGlobalData("assetVersion", Date.now().toString());
 	eleventyConfig.setInputDirectory(".");

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-ghpages": "npx @11ty/eleventy"
+    "build": "eleventy",
+    "build-ghpages": "npm run build"
   },
   "keywords": [],
   "author": "",
