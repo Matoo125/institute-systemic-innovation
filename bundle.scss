@@ -705,6 +705,220 @@ position: relative;
   padding-left: 0.25rem;
 }
 
+/* ── UI library page ─────────────────────────────────────── */
+.ui-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.ui-toc .button {
+  min-height: 0;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.ui-block {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--color-line);
+  scroll-margin-top: 96px;
+}
+
+.ui-block > h2 {
+  margin-bottom: 0.5rem;
+}
+
+.ui-block__hint {
+  margin-bottom: 1.75rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.ui-icons__group {
+  margin: 2rem 0 1rem;
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+code {
+  font-family: ui-monospace, "SFMono-Regular", "Menlo", monospace;
+  font-size: 0.85em;
+  background: var(--color-surface-3);
+  border-radius: 4px;
+  padding: 0.12em 0.4em;
+}
+
+/* Gallery */
+.ui-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ui-gallery__item {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 200px;
+  max-width: 260px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+}
+
+.ui-gallery__item img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background:
+    repeating-conic-gradient(rgba(218, 226, 253, 0.05) 0% 25%, transparent 0% 50%) 50% / 22px 22px;
+  padding: 0.75rem;
+}
+
+.ui-gallery__item figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-top: 1px solid var(--color-line);
+  padding: 0.55rem 0.7rem;
+  font-size: 0.8rem;
+}
+
+.ui-gallery__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-muted);
+}
+
+.ui-tag {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--color-surface-3);
+  color: var(--color-on-surface);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.18rem 0.5rem;
+}
+
+/* Icons */
+.ui-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.ui-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 120px;
+  max-width: 160px;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+  color: var(--color-on-surface);
+  padding: 1rem 0.6rem;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.ui-icon:hover,
+.ui-icon:focus-visible {
+  border-color: var(--color-primary-hover);
+  background: var(--color-surface-3);
+  transform: translateY(-2px);
+}
+
+.ui-icon i {
+  font-size: 1.6rem;
+  color: var(--color-primary-hover);
+}
+
+.ui-icon__name {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  text-align: center;
+  word-break: break-word;
+}
+
+.ui-icon::after {
+  content: "Skopírované ✓";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  background: var(--color-primary);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease;
+}
+
+.ui-icon.is-copied::after {
+  opacity: 1;
+}
+
+/* Color swatches */
+.ui-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.ui-swatch {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.82rem;
+}
+
+.ui-swatch__chip {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+}
+
+.ui-swatch code {
+  margin-left: auto;
+}
+
+/* Specimen + rows */
+.ui-specimen > * + * {
+  margin-top: 1rem;
+}
+
+.ui-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.ui-row--center {
+  align-items: center;
+}
+
 @media (max-width: 1200px) {
   html {
     scroll-padding-top: 80px;

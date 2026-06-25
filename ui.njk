@@ -1,0 +1,146 @@
+---
+layout: mylayout.njk
+title: UI knižnica | Inštitút systémových inovácií
+permalink: /ui/
+---
+
+<section class="section section--tinted ui-page">
+  <div class="section__header">
+    <p class="eyebrow">Dizajn systém</p>
+    <h1>UI knižnica</h1>
+    <p>Prehľad vizuálnych prvkov stránky: galéria obrázkov, dostupné ikony a komponenty rozhrania.</p>
+    <nav class="ui-toc" aria-label="Obsah stránky">
+      <a class="button button--secondary" href="#galeria">Galéria</a>
+      <a class="button button--secondary" href="#ikony">Ikony</a>
+      <a class="button button--secondary" href="#komponenty">Komponenty</a>
+    </nav>
+  </div>
+
+  <!-- 1) GALLERY -->
+  <div class="ui-block" id="galeria">
+    <h2>Galéria obrázkov</h2>
+    <p class="ui-block__hint">{{ gallery.length }} položiek z priečinka <code>/assets</code>.</p>
+    <div class="ui-gallery">
+      {%- for image in gallery %}
+      <figure class="ui-gallery__item">
+        <img src="{{ image.src }}" alt="{{ image.file }}" loading="lazy">
+        <figcaption>
+          <span class="ui-gallery__name">{{ image.file }}</span>
+          <span class="ui-tag">{{ image.type }}</span>
+        </figcaption>
+      </figure>
+      {%- endfor %}
+    </div>
+  </div>
+
+  <!-- 2) ICONS -->
+  <div class="ui-block" id="ikony">
+    <h2>Ikony</h2>
+    <p class="ui-block__hint">Flaticon UIcons — sada <code>regular rounded</code> (<code>fi-rr-*</code>). Kliknutím skopírujete názov triedy.</p>
+    <nav class="ui-row" aria-label="Plné sady ikon">
+      <a class="button button--secondary" href="https://www.flaticon.com/uicons/interface-icons" target="_blank" rel="noopener">Prehľadávať všetky UIcons →</a>
+      <a class="text-link" href="https://www.flaticon.com/uicons/interface-icons?type=uicon-regular-rounded&style=Regular&corner=Rounded" target="_blank" rel="noopener">Regular rounded (fi-rr)</a>
+      <a class="text-link" href="https://www.flaticon.com/uicons/interface-icons?type=uicon-regular-straight&style=Regular&corner=Straight" target="_blank" rel="noopener">Regular straight (fi-rs)</a>
+      <a class="text-link" href="https://www.flaticon.com/uicons/interface-icons?type=uicon-solid-rounded&style=Solid&corner=Rounded" target="_blank" rel="noopener">Solid rounded (fi-sr)</a>
+      <a class="text-link" href="https://www.flaticon.com/uicons/interface-icons?type=uicon-brands&style=Brands" target="_blank" rel="noopener">Brands (fi-brands)</a>
+    </nav>
+    {%- for set in icons %}
+    <h3 class="ui-icons__group">{{ set.group }}</h3>
+    <div class="ui-icons">
+      {%- for name in set.icons %}
+      <button type="button" class="ui-icon" data-icon="fi fi-rr-{{ name }}" aria-label="Kopírovať triedu fi-rr-{{ name }}">
+        <i class="fi fi-rr-{{ name }}" aria-hidden="true"></i>
+        <span class="ui-icon__name">{{ name }}</span>
+      </button>
+      {%- endfor %}
+    </div>
+    {%- endfor %}
+  </div>
+
+  <!-- 3) DESIGN ELEMENTS -->
+  <div class="ui-block" id="komponenty">
+    <h2>Komponenty</h2>
+
+    <h3 class="ui-icons__group">Farby</h3>
+    <div class="ui-swatches">
+      <div class="ui-swatch"><span class="ui-swatch__chip" style="background:#2665fd"></span>--color-primary<code>#2665fd</code></div>
+      <div class="ui-swatch"><span class="ui-swatch__chip" style="background:#4d7dff"></span>--color-primary-hover<code>#4d7dff</code></div>
+      <div class="ui-swatch"><span class="ui-swatch__chip" style="background:#0b1326"></span>--color-surface<code>#0b1326</code></div>
+      <div class="ui-swatch"><span class="ui-swatch__chip" style="background:#111a2f"></span>--color-surface-2<code>#111a2f</code></div>
+      <div class="ui-swatch"><span class="ui-swatch__chip" style="background:#17213a"></span>--color-surface-3<code>#17213a</code></div>
+      <div class="ui-swatch"><span class="ui-swatch__chip" style="background:#dae2fd"></span>--color-on-surface<code>#dae2fd</code></div>
+      <div class="ui-swatch"><span class="ui-swatch__chip" style="background:#97a7c7"></span>--color-muted<code>#97a7c7</code></div>
+      <div class="ui-swatch"><span class="ui-swatch__chip" style="background:#26324b"></span>--color-line<code>#26324b</code></div>
+      <div class="ui-swatch"><span class="ui-swatch__chip" style="background:#ffb4ab"></span>--color-error<code>#ffb4ab</code></div>
+    </div>
+
+    <h3 class="ui-icons__group">Typografia</h3>
+    <div class="ui-specimen">
+      <h1>Nadpis H1</h1>
+      <h2>Nadpis H2</h2>
+      <h3>Nadpis H3</h3>
+      <p class="lede">Lede — úvodný odsek s väčším, tlmeným textom pre kontext sekcie.</p>
+      <p>Bežný odsek. Prepájame skúsenosť z praxe, odborný rámec, dáta a použiteľné výstupy. <a href="#">Textový odkaz</a> v rámci vety.</p>
+      <p class="eyebrow">Eyebrow — nadpisová značka</p>
+    </div>
+
+    <h3 class="ui-icons__group">Tlačidlá</h3>
+    <div class="ui-row">
+      <a class="button button--primary" href="#komponenty">Primárne tlačidlo</a>
+      <a class="button button--secondary" href="#komponenty">Sekundárne tlačidlo</a>
+      <a class="text-link" href="#komponenty">Textový odkaz →</a>
+    </div>
+
+    <h3 class="ui-icons__group">Odznaky a tooltip</h3>
+    <div class="ui-row ui-row--center">
+      <span class="alert-badge" role="status">Nová sekcia</span>
+      <span class="ui-row--center">
+        Info tooltip
+        <info-tooltip label="Ukážka tooltipu" text="Nájazdom alebo klávesovým fokusom sa zobrazí nápoveda. Kliknutím ju pripnete."></info-tooltip>
+      </span>
+    </div>
+
+    <h3 class="ui-icons__group">Karty</h3>
+    <div class="cards cards--two">
+      <article class="card">
+        <h3>Karta</h3>
+        <p>Základný kontajner pre obsah s rámčekom a tlmeným pozadím.</p>
+        <ul>
+          <li>položka zoznamu,</li>
+          <li>položka zoznamu,</li>
+          <li>položka zoznamu.</li>
+        </ul>
+      </article>
+      <aside class="note">
+        <h3>Poznámka (note / aside)</h3>
+        <p>Variant pre doplnkový obsah, zvyčajne v pravom stĺpci mriežky <code>content-grid</code>.</p>
+      </aside>
+    </div>
+
+    <h3 class="ui-icons__group">Vzor: hlavný text s bočným panelom</h3>
+    <p class="ui-block__hint">Mriežka <code>content-grid</code> — naľavo stĺpec textu (<code>content-stack</code>), napravo <code>aside</code>.</p>
+    <div class="content-grid">
+      <div class="content-stack">
+        <article>
+          <h3>Hlavný text</h3>
+          <p>Hlavný stĺpec nesie nosný obsah sekcie. Vhodný pre úvod, popis a kľúčové body.</p>
+          <ul>
+            <li>prvý bod,</li>
+            <li>druhý bod,</li>
+            <li>tretí bod.</li>
+          </ul>
+        </article>
+        <div class="text-block">
+          <h3>Ďalší blok textu</h3>
+          <p>Bloky v stĺpci sa skladajú pod seba s konzistentnými rozostupmi.</p>
+        </div>
+      </div>
+      <aside class="note">
+        <h3>Bočný panel</h3>
+        <p>Doplnkový obsah napravo — poznámka, kontext alebo zhrnutie. Na úzkych obrazovkách sa presunie pod hlavný text.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script src="/assets/ui-copy.js?v={{ assetVersion }}" defer></script>
