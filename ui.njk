@@ -13,6 +13,7 @@ permalink: /ui/
       <a class="button button--secondary" href="#galeria">Galéria</a>
       <a class="button button--secondary" href="#ikony">Ikony</a>
       <a class="button button--secondary" href="#komponenty">Komponenty</a>
+      <a class="button button--secondary" href="#tabulka">Dátová tabuľka</a>
     </nav>
     <div class="ui-row ui-row--center" style="margin-top: 1.5rem;">
       <button class="theme-toggle" type="button" aria-label="Prepnúť svetlý alebo tmavý režim" aria-pressed="false">
@@ -146,6 +147,34 @@ permalink: /ui/
         <h3>Bočný panel</h3>
         <p>Doplnkový obsah napravo — poznámka, kontext alebo zhrnutie. Na úzkych obrazovkách sa presunie pod hlavný text.</p>
       </aside>
+    </div>
+
+    <h3 class="ui-icons__group" id="tabulka">Dátová tabuľka</h3>
+    <p class="ui-block__hint">Komponent <code>.data-table</code> (Grid.js) — vyhľadávanie, triedenie a stránkovanie. Konfigurácia cez vnorený <code>&lt;script type="application/json"&gt;</code>.</p>
+    <div class="data-table" data-table>
+      <script type="application/json">
+        {
+          "columns": ["Obec", "Okres", "Obyvatelia", "Zber dát"],
+          "data": [
+            ["Košice", "Košice", 228249, "Dokončené"],
+            ["Prešov", "Prešov", 84246, "Prebieha"],
+            ["Michalovce", "Michalovce", 35000, "Plánované"],
+            ["Trebišov", "Trebišov", 22000, "Prebieha"],
+            ["Bardejov", "Bardejov", 32000, "Dokončené"],
+            ["Humenné", "Humenné", 33000, "Plánované"],
+            ["Spišská Nová Ves", "Spišská Nová Ves", 37000, "Prebieha"],
+            ["Vranov nad Topľou", "Vranov nad Topľou", 22000, "Plánované"],
+            ["Snina", "Snina", 20000, "Dokončené"],
+            ["Rožňava", "Rožňava", 19000, "Plánované"],
+            ["Levoča", "Levoča", 14000, "Prebieha"],
+            ["Sabinov", "Sabinov", 12000, "Plánované"]
+          ],
+          "search": true,
+          "sort": true,
+          "pagination": true,
+          "limit": 5
+        }
+      </script>
     </div>
   </div>
 </section>
