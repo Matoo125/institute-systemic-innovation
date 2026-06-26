@@ -14,6 +14,7 @@ permalink: /ui/
       <a class="button button--secondary" href="#ikony">Ikony</a>
       <a class="button button--secondary" href="#komponenty">Komponenty</a>
       <a class="button button--secondary" href="#tabulka">Dátová tabuľka</a>
+      <a class="button button--secondary" href="#mapa">Mapa krajov</a>
     </nav>
     <div class="ui-row ui-row--center" style="margin-top: 1.5rem;">
       <button class="theme-toggle" type="button" aria-label="Prepnúť svetlý alebo tmavý režim" aria-pressed="false">
@@ -175,6 +176,26 @@ permalink: /ui/
           "limit": 5
         }
       </script>
+    </div>
+
+    <h3 class="ui-icons__group" id="mapa">Mapa krajov</h3>
+    <p class="ui-block__hint">Komponent <code>.region-map</code> — inline SVG z <code>regions.geojson</code> (build-time). Choropleth: nezamestnanosť podľa kraja ({{ slovakiaMap.period }}). Trieda <code>.region-map--plain</code> vypne tieňovanie.</p>
+    <div class="region-map" role="group" aria-label="Mapa slovenských krajov – nezamestnanosť ({{ slovakiaMap.period }})">
+      <svg class="region-map__svg" viewBox="0 0 {{ slovakiaMap.width }} {{ slovakiaMap.height }}" xmlns="http://www.w3.org/2000/svg">
+        {%- for r in slovakiaMap.regions %}
+        <g class="region" tabindex="0" role="listitem"
+           aria-label="{{ r.name }} kraj{% if r.value %}: {{ r.value }} % nezamestnanosť{% endif %}">
+          <title>{{ r.name }} kraj{% if r.value %} — {{ r.value }} %{% endif %}</title>
+          <path class="region__shape" style="--fill: {{ r.color }};" d="{{ r.path }}" />
+          <text class="region__label" x="{{ r.labelX }}" y="{{ r.labelY }}" text-anchor="middle">{{ r.name }}</text>
+        </g>
+        {%- endfor %}
+      </svg>
+      <ul class="region-map__legend" aria-label="Legenda – nezamestnanosť">
+        {%- for b in slovakiaMap.legend %}
+        <li><span class="region-map__swatch" style="background: {{ b.color }};"></span>{{ b.label }}</li>
+        {%- endfor %}
+      </ul>
     </div>
   </div>
 </section>
