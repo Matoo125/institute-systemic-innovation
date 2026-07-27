@@ -41,7 +41,6 @@ permalink: /inovacie/
           <h3>Pre koho je systém určený</h3>
           <p>Pre kandidátov na funkciu starostu, primátora, župana a poslanca obecného, mestského alebo krajského zastupiteľstva.</p>
           <p>V jednej obci alebo mestskom obvode spolupracujeme iba s jedným kandidátom.</p>
-          <img style="max-width: 100%" src="/assets/rail.svg" />
         </aside>
       </div>
   </details>
