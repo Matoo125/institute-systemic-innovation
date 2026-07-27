@@ -7,12 +7,11 @@ title: Inštitút systémových inovácií
     <meta charset="utf-8">
     <script>
       // Apply the theme before first paint to avoid a flash.
-      // Saved choice wins; otherwise follow the system, defaulting to dark.
+      // Saved choice wins; otherwise default to dark.
       (function () {
         try {
           var saved = localStorage.getItem("theme");
-          var prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-          var theme = saved || (prefersLight ? "light" : "dark");
+          var theme = saved || "dark";
           document.documentElement.setAttribute("data-theme", theme);
         } catch (e) {
           document.documentElement.setAttribute("data-theme", "dark");
